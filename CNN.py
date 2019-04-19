@@ -10,24 +10,25 @@ class cnn_model:
         self.model = Sequential()
         self.num_classes = kwargs['num_class']
         self.create_model()
+
     def create_model(self):
         self.model.add(
             Conv2D(
                 32,
-                kernel_size=[5,5],
+                kernel_size=[5, 5],
                 activation="relu",
-                input_shape=(64,64,1)
+                input_shape=(32, 32, 1)
             )
         )
         self.model.add(
             MaxPooling2D(
-                pool_size=[2,2],
+                pool_size=[2, 2],
             )
         )
         self.model.add(
             Conv2D(
                 64,
-                kernel_size=[5,5],
+                kernel_size=[5, 5],
             )
         )
         self.model.add(
